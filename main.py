@@ -5,7 +5,7 @@ from phrases import ran_phrase
 token_arch = open("token.txt", "r")
 token = token_arch.readline()
 intents = discord.Intents.default()
-intents.message_content = True
+#intents.message_content = True
 
 jearl = commands.Bot(command_prefix="!j", intents=intents)
 
