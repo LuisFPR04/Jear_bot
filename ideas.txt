@@ -1,2 +1,0 @@
---Bot que te de el clima 
--https://weatherstack.com/documentation
