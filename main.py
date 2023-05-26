@@ -9,6 +9,9 @@ intents = discord.Intents.default()
 
 jearl = commands.Bot(command_prefix="!j", intents=intents)
 
+def is_alive():
+    return jearl.is_ready()
+
 async def on_ready(self):
     print(f'Logged on as {self.user}!')
 
