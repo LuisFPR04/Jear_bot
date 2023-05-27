@@ -21,9 +21,9 @@ async def on_message(self, message):
 
 @jearl.command()
 async def say_phrase(ctx, phrase_from:str):
-    phrase = ran_phrase(phrase_from)
     try:
-        await ctx.send(f'"{phrase[0]}"\n -{phrase[1]}, {phrase[2]}')
+        phrase = ran_phrase(phrase_from)
+        await ctx.send(f'{phrase[0]}\n -{phrase[1]}, {phrase[2]}')
     except:
         await ctx.send(f'Try a valid command')
 
