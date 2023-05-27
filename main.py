@@ -1,7 +1,7 @@
 import discord
 import os
 from discord.ext import commands
-from phrases import ran_phrase
+from phrases import *
 
 token = os.getenv("token.txt")
 intents = discord.Intents.default()
@@ -22,8 +22,13 @@ async def on_message(self, message):
 @jearl.command()
 async def say_phrase(ctx, phrase_from:str):
     try:
-        phrase = ran_phrase(phrase_from)
-        await ctx.send(f'{phrase[0]}\n -{phrase[1]}, {phrase[2]}')
+        if phrase_from.lower() != "random":
+            phrase = ran_phrase_from(phrase_from)
+            await ctx.send(f'{phrase[0]}\n-{phrase[1]}, {phrase[2]}')
+
+        if phrase_from.lower() == "random":
+            phrase = random_phrase()
+            await ctx.send(f'{phrase[0]}\n -{phrase[1]}, {phrase[2]}')
     except:
         await ctx.send(f'Try a valid command')
 
